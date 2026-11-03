@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/*.py": {
+      "excludeFiles": "{reference/**,public/**,__pycache__/**,tests/**,dev.py,README.md}"
+    }
+  }
+}
